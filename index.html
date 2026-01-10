@@ -1,54 +1,101 @@
+html
 <!DOCTYPE html>
 <html>
-
+<html lang="ru">
 <head>
-	<style>
-		body {
-			background-color: #e6f7bf;
-			margin: 0;
-			padding: 40px;
-			font-family: Arial, sans-serif;
-		}
+<meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #e6f7bf;
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+        }
 
-		h1 {
-			text-align: center;
-			color: #710c04;
-			margin-bottom: 30px;
-		}
+        h1 {
+            text-align: center;
+            color: #710c04;
+            margin-bottom: 30px;
+        }
 
-		p {
-			text-align: left;
-			color: #710c04;
-			line-height: 1.6;
-			margin-bottom: 15px;
-		}
+        p {
+            text-align: left;
+            color: #710c04;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-		h4 {
-			text-align: left;
-			color: #710c04;
-			line-height: 1.6;
-			margin-bottom: 15px;
-		}
-	</style>
+        h4 {
+            text-align: left;
+            color: #710c04;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Новый контейнер для центрирования контента */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Стили для ссылок внутри контейнера */
+        .content-container a {
+            display: inline-block;
+            margin: 10px 0;
+            color: #710c04;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стиль для изображения */
+        .content-container img {
+            display: block;
+            margin: 15px 0;
+        }
+    </style>
 </head>
 
 <body>
-	<h1>Дипломный проект</h1>
-	<h4>Фигма</h4>
-	<a href="https://www.figma.com/" target="_blank">🎨Открыть Figma в новой вкладке</a>
-	<h4>что и для чего?<h4>
-			<p>Figma — онлайн-инструмент для дизайна интерфейсов.
-				Позволяет создавать макеты сайтов и приложений,
-				работать вместе в реальном времени и делать интерактивные прототипы.</p>
-			<img src="https://camo.githubusercontent.com/459a63a9ab1410fecb634b92097ab883fdcc0ebc365f9bc30e5cc79df9f7c4a1/68747470733a2f2f6c6f676f732d776f726c642e6e65742f77702d636f6e74656e742f75706c6f6164732f323032342f30392f4669676d612d4c6f676f2e706e67"width="200">
-			<a
-				href="https://www.figma.com/proto/pnpz3r1RV1hjSc4HHlVOQ5/Untitled?node-id=1-2&t=gNnTKkWwblc8V2Y9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">моя
-				работа</a>
-			<h1>Антивирус</h1>
-			<h4>эта программа нужна для того чтобы проверять файлы и подобное на наличее вирусов</h4>
-			<a href='https://yoshamini123.github.io/drweb/'>Антивирус</a>
+    <h1>Дипломный проект</h1>
+    
+    <!-- Начало контейнера для центрированного контента -->
+    <div class="content-container">
+        <h4>Фигма</h4>
+        <a href="https://www.figma.com/" target="_blank">🎨Открыть Figma в новой вкладке</a>
+        
+        <h4>что и для чего?</h4>
+        <p>Figma — онлайн-инструмент для дизайна интерфейсов.
+            Позволяет создавать макеты сайтов и приложений,
+            работать вместе в реальном времени и делать интерактивные прототипы.</p>
+        
+        <img src="https://camo.githubusercontent.com/459a63a9ab1410fecb634b92097ab883fdcc0ebc365f9bc30e5cc79df9f7c4a1/68747470733a2f2f6c6f676f732d776f726c642e6e65742f77702d636f6e74656e742f75706c6f6164732f323032342f30392f4669676d612d4c6f676f2e706e67" width="200">
+        
+        <a href="https://www.figma.com/proto/pnpz3r1RV1hjSc4HHlVOQ5/Untitled?node-id=1-2&t=gNnTKkWwblc8V2Y9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">моя работа</a>
+    </div>
+    <!-- Конец контейнера -->
+
+    <h1>Антивирус</h1>
+    
+    <!-- Второй контейнер -->
+    <div class="content-container">
+        <h4>эта программа нужна для того чтобы проверять файлы и подобное на наличее вирусов</h4>
+        <a href='https://yoshamini123.github.io/drweb/'>Антивирус</a>
+    </div>
+
+    <h1>Html</h1>
+    
+    <!-- Третий контейнер -->
+    <div class="content-container">
+        <h4>сдесь будут работы написаные на html. постепенно они будут паполнятся</h4>
+        <ul>
+       <li> <a href='yoshamini123.github.io/tabliza/'>таблица</a>
+       <li> <a href='yoshamini123.github.io/-html/'>3D в html</html></a>
+    </div>
 </body>
-<h1>Html</h1>
-<h4>сдесь будут работы написаные на html. постепенно они будут паполнятся</h4>
-	<a href='yoshamini123.github.io/tabliza/'>таблица</a>
+
 </html>
