@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио - Мои работы | Синяя тема</title>
+    <title>Портфолио — Мои проекты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,362 +12,806 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg: #2a2528;
+            --card: #332d30;
+            --card-2: #3a3336;
+            --line: #443c40;
+
+            --ink: #e8e2e4;
+            --ink-soft: #b8aeb2;
+            --muted: #7d7479;
+
+            --bordo: #7d3345;
+            --bordo-soft: #a05a6b;
+            --bordo-pale: #4a2832;
+
+            --silver: #8a878e;
+            --silver-soft: #b0adb4;
+            --silver-pale: #3f3d42;
+
+            --black: #1a1619;
+
+            --lav: #756a80;
+            --lav-soft: #9a8fa6;
+            --lav-pale: #3d3846;
+
+            --rose: #8f6d6d;
+            --rose-pale: #433232;
+        }
+
         body {
-            background: linear-gradient(135deg, #0a192f 0%, #1e3a5f 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #e6f7ff;
-            line-height: 1.6;
-            padding: 20px;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.7;
+            font-size: 16px;
+            padding: 40px 20px 80px;
+            -webkit-font-smoothing: antialiased;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
-        header {
+        /* ============ ШАПКА ============ */
+        .header {
             text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 40px;
-            background: rgba(10, 25, 47, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(100, 181, 246, 0.3);
+            padding: 60px 30px 40px;
         }
 
-        h1 {
-            background: linear-gradient(135deg, #64b5f6, #2196f3);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .subtitle {
-            color: #90caf9;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .project-card {
-            background: rgba(15, 35, 60, 0.85);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(100, 181, 246, 0.2);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(33, 150, 243, 0.2);
-            border-color: rgba(100, 181, 246, 0.5);
-        }
-
-        .project-title {
-            font-size: 1.8rem;
-            color: #64b5f6;
+        .header .kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--bordo-soft);
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(100, 181, 246, 0.3);
         }
 
-        .project-description {
-            color: #e0f2fe;
-            margin-bottom: 25px;
-            font-size: 1.05rem;
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.025em;
+            margin-bottom: 20px;
+            color: var(--ink);
         }
 
-        .links-list {
-            list-style: none;
-            margin: 20px 0;
+        .header h1 em {
+            font-style: italic;
+            color: var(--bordo-soft);
         }
 
-        .links-list li {
+        .header p {
+            font-size: 17px;
+            color: var(--ink-soft);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ============ РАЗДЕЛИТЕЛЬ ============ */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0 50px;
+            padding: 0 20px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+            max-width: 200px;
+        }
+
+        .divider .star {
+            color: var(--bordo-soft);
+            font-size: 20px;
+            line-height: 1;
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ============ ОБО МНЕ ============ */
+        .about {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 44px 44px;
+            margin-bottom: 24px;
+            border: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 36px;
+            align-items: center;
+            position: relative;
+        }
+
+        .about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--bordo);
+            border-radius: 24px 24px 0 0;
+        }
+
+        /* Аватарка — с символом цветка ❀ */
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--bordo-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            color: var(--bordo-soft);
+            line-height: 1;
+            border: 2px solid var(--bordo);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .avatar .flower {
+            display: inline-block;
+            transform: translateY(-2px);
+        }
+
+        .avatar::after {
+            content: "✦";
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 28px;
+            height: 28px;
+            background: var(--bordo);
+            color: var(--ink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border: 2px solid var(--card);
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
+
+        .about-content .role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--bordo-soft);
+            margin-bottom: 16px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: var(--ink-soft);
             margin-bottom: 12px;
         }
 
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #90caf9;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 20px;
-            background: rgba(33, 150, 243, 0.1);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(100, 181, 246, 0.2);
-        }
-
-        .project-link:hover {
-            background: rgba(33, 150, 243, 0.2);
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
-            color: #bbdef5;
-            border-color: rgba(100, 181, 246, 0.5);
-        }
-
-        .icon {
-            font-size: 1.2rem;
-        }
-
-        .tech-tags {
+        .about-content .interests {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        .tech-tag {
-            background: rgba(33, 150, 243, 0.2);
-            color: #90caf9;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .about-content .interest {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
             font-weight: 500;
-            border: 1px solid rgba(100, 181, 246, 0.3);
+            padding: 5px 12px;
+            background: var(--card-2);
+            color: var(--ink-soft);
+            border-radius: 100px;
+            border: 1px solid var(--line);
+            letter-spacing: 0.03em;
         }
 
-        .logo-img {
-            display: block;
-            max-width: 200px;
-            height: auto;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            filter: brightness(0.95);
-            transition: filter 0.3s ease;
+        .about-content .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .logo-img:hover {
-            filter: brightness(1);
+        .about-content .contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-soft);
+            text-decoration: none;
+            padding: 8px 16px;
+            background: var(--card-2);
+            border-radius: 100px;
+            border: 1px solid var(--line);
+            transition: all 0.2s;
         }
 
+        .about-content .contact:hover {
+            background: var(--bordo);
+            color: var(--ink);
+            border-color: var(--bordo);
+        }
+
+        /* ============ ГЛАВНЫЙ ПРОЕКТ ============ */
+        .featured {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 48px 44px;
+            margin-bottom: 24px;
+            border: 1px solid var(--line);
+            position: relative;
+        }
+
+        .featured::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--bordo);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .featured .label {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--bordo-soft);
+            background: var(--bordo-pale);
+            padding: 6px 14px;
+            border-radius: 30px;
+            margin-bottom: 22px;
+            border: 1px solid var(--bordo);
+        }
+
+        .featured h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+            color: var(--ink);
+        }
+
+        .featured h2 .snake {
+            color: var(--bordo-soft);
+            font-style: italic;
+        }
+
+        .featured p {
+            font-size: 17px;
+            color: var(--ink-soft);
+            margin-bottom: 30px;
+            max-width: 560px;
+        }
+
+        .featured .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .featured .feature {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 5px 12px;
+            background: var(--card-2);
+            color: var(--ink-soft);
+            border-radius: 6px;
+            border: 1px solid var(--line);
+        }
+
+        /* ============ КНОПКА ============ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 16px 30px;
+            border-radius: 100px;
+            text-decoration: none;
+            background: var(--bordo);
+            color: var(--ink);
+            transition: background 0.2s ease;
+            letter-spacing: 0.01em;
+            border: 1px solid var(--bordo);
+        }
+
+        .btn:hover {
+            background: var(--bordo-soft);
+            border-color: var(--bordo-soft);
+        }
+
+        .btn .arrow {
+            transition: transform 0.25s;
+        }
+
+        .btn:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* ============ СЕКЦИЯ ============ */
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* ============ СЕТКА ПРОЕКТОВ ============ */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 32px 28px;
+            border: 1px solid var(--line);
+            transition: border-color 0.25s ease, background 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent, var(--bordo));
+        }
+
+        .card:hover {
+            background: var(--card-2);
+            border-color: var(--accent, var(--bordo));
+        }
+
+        .card.figma { --accent: var(--bordo); }
+        .card.antivirus { --accent: var(--silver); }
+        .card.html { --accent: var(--lav); }
+        .card.stackblitz { --accent: var(--rose); }
+        .card.model3d { --accent: var(--bordo-soft); }
+
+        .card .icon-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+            background: var(--card-2);
+            border: 1px solid var(--line);
+        }
+
+        .card.figma .icon-badge { background: var(--bordo-pale); border-color: var(--bordo); }
+        .card.antivirus .icon-badge { background: var(--silver-pale); border-color: var(--silver); }
+        .card.html .icon-badge { background: var(--lav-pale); border-color: var(--lav); }
+        .card.stackblitz .icon-badge { background: var(--rose-pale); border-color: var(--rose); }
+        .card.model3d .icon-badge { background: var(--bordo-pale); border-color: var(--bordo-soft); }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: var(--ink);
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--ink-soft);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .card .card-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 500;
+            padding: 3px 9px;
+            background: var(--card-2);
+            color: var(--muted);
+            border-radius: 4px;
+            letter-spacing: 0.03em;
+            border: 1px solid var(--line);
+        }
+
+        .card .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+            text-decoration: none;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            margin-top: auto;
+            transition: color 0.2s;
+        }
+
+        .card .card-link:hover {
+            color: var(--accent, var(--bordo-soft));
+        }
+
+        .card .card-link .arrow {
+            margin-left: auto;
+            transition: transform 0.2s;
+        }
+
+        .card .card-link:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .card .links-stack {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+        }
+
+        .card .links-stack a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+            text-decoration: none;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s, padding-left 0.2s;
+        }
+
+        .card .links-stack a:hover {
+            color: var(--accent, var(--bordo-soft));
+            padding-left: 4px;
+        }
+
+        .card .links-stack a .arrow {
+            margin-left: auto;
+            color: var(--muted);
+            transition: transform 0.2s;
+        }
+
+        .card .links-stack a:hover .arrow {
+            transform: translateX(4px);
+            color: var(--accent, var(--bordo-soft));
+        }
+
+        /* ============ ЗАГЛУШКА ============ */
+        .placeholder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 14px;
+            border-top: 1px dashed var(--line);
+            margin-top: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12.5px;
+            color: var(--muted);
+            letter-spacing: 0.03em;
+        }
+
+        .placeholder .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--bordo-soft);
+            flex-shrink: 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* ============ ПОДВАЛ ============ */
         footer {
             text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            color: #90caf9;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(100, 181, 246, 0.2);
+            padding: 50px 20px 20px;
+            border-top: 1px solid var(--line);
+            margin-top: 40px;
         }
 
-        /* Анимация для карточек */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        footer .signature {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--ink);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
         }
 
-        .project-card {
-            animation: fadeInUp 0.6s ease forwards;
+        footer .small {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.05em;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .project-card {
-                padding: 20px;
-            }
-            
-            .projects-grid {
+        /* ============ АНИМАЦИЯ ============ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header,
+        .divider,
+        .about,
+        .featured,
+        .grid .card {
+            animation: fadeUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .divider { animation-delay: 0.1s; }
+        .about { animation-delay: 0.15s; }
+        .featured { animation-delay: 0.25s; }
+        .grid .card:nth-child(1) { animation-delay: 0.35s; }
+        .grid .card:nth-child(2) { animation-delay: 0.45s; }
+        .grid .card:nth-child(3) { animation-delay: 0.55s; }
+        .grid .card:nth-child(4) { animation-delay: 0.65s; }
+        .grid .card:nth-child(5) { animation-delay: 0.75s; }
+
+        /* ============ МОБИЛЬНАЯ ============ */
+        @media (max-width: 700px) {
+            body { padding: 24px 14px 60px; }
+            .header { padding: 40px 20px 30px; }
+            .header h1 { font-size: 42px; }
+            .header p { font-size: 16px; }
+            .divider { margin: 16px 0 36px; }
+            .about {
                 grid-template-columns: 1fr;
+                padding: 32px 26px;
+                text-align: center;
+                gap: 20px;
             }
-        }
-
-        /* Дополнительные эффекты */
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.3s; }
-        .project-card:nth-child(3) { animation-delay: 0.5s; }
-
-        /* Стили для скроллбара */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0a192f;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #2196f3;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64b5f6;
-        }
-
-        /* Акцент на ссылках */
-        .project-link:active {
-            transform: scale(0.98);
+            .avatar {
+                margin: 0 auto;
+                width: 120px;
+                height: 120px;
+                font-size: 60px;
+            }
+            .about-content h2 { font-size: 26px; }
+            .about-content .interests { justify-content: center; }
+            .about-content .contacts { justify-content: center; }
+            .featured { padding: 32px 24px; border-radius: 20px; }
+            .featured h2 { font-size: 28px; }
+            .featured p { font-size: 15.5px; }
+            .btn { padding: 14px 24px; font-size: 14px; }
+            .grid { grid-template-columns: 1fr; gap: 16px; }
+            .card { padding: 26px 22px; }
+            .card h3 { font-size: 20px; }
+            footer .signature { font-size: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Дипломный проект</h1>
-            <p class="subtitle">Собрание моих работ</p>
+
+        <!-- ШАПКА -->
+        <header class="header">
+            <div class="kicker">✦ Портфолио · 2026 ✦</div>
+            <h1>Мои <em>проекты</em></h1>
+            <p>Коллекция учебных и дипломных работ — от веб-разработки до дизайна интерфейсов.</p>
         </header>
 
-        <main class="projects-grid">
-            <!-- Проект 1: Дипломный проект Figma -->
-            <article class="project-card">
-                <h2 class="project-title">Figma</h2>
-                <p class="project-description">
-                    <strong>Figma</strong> — современный онлайн-инструмент для проектирования интерфейсов, 
-                    который позволяет создавать макеты, прототипы и работать в команде в реальном времени.
-                </p>
-                
-                <img src="https://camo.githubusercontent.com/459a63a9ab1410fecb634b92097ab883fdcc0ebc365f9bc30e5cc79df9f7c4a1/68747470733a2f2f6c6f676f732d776f726c642e6e65742f77702d636f6e74656e742f75706c6f6164732f323032342f30392f4669676d612d4c6f676f2e706e67" 
-                     alt="Логотип Figma" 
-                     class="logo-img">
-                
-                <ul class="links-list">
-                    <li>
-                        <a href="https://www.figma.com/" target="_blank" class="project-link">
-                            <span class="icon">🎨</span> Официальный сайт Figma
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.figma.com/proto/pnpz3r1RV1hjSc4HHlVOQ5/Untitled?node-id=1-2&t=gNnTKkWwblc8V2Y9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" 
-                           target="_blank" class="project-link">
-                            <span class="icon">📂</span> Моя дипломная работа в Figma
-                        </a>
-                    </li>
-                </ul>
-                
-            </article>
+        <!-- РАЗДЕЛИТЕЛЬ -->
+        <div class="divider">
+            <span class="star">✦</span>
+        </div>
 
-            <!-- Проект 2: Антивирус -->
-            <article class="project-card">
-                <h2 class="project-title">Антивирусная программа</h2>
-                <p class="project-description">
-                    Веб-приложение для проверки файлов на наличие вредоносного программного обеспечения.
-                    Инструмент для демонстрации принципов работы антивирусного ПО в браузере.
-                </p>
-                
-                <ul class="links-list">
-                    <li>
-                        <a href='https://yoshamini123.github.io/drweb/' target="_blank" class="project-link">
-                            <span class="icon">🛡️</span> Запустить антивирус
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="tech-tags">
+        <!-- ОБО МНЕ -->
+        <section class="about">
+            <div class="avatar">
+                <span class="flower">❀</span>
+            </div>
+            <div class="about-content">
+                <h2>Привет, я — автор</h2>
+                <div class="role">✦ Школьница · Учусь веб-разработке ✦</div>
+                <p>Я учусь в школе и параллельно осваиваю веб-разработку, дизайн интерфейсов и 3D-моделирование. Здесь я собираю свои учебные и дипломные проекты — от первых HTML-страниц до интерактивных приложений на Python.</p>
+                <div class="interests">
+                    <span class="interest">◆ Веб-разработка</span>
+                    <span class="interest">◆ Дизайн</span>
+                    <span class="interest">◆ Python</span>
+                    <span class="interest">◆ 3D-моделирование</span>
+                </div>
+                <div class="contacts">
+                    <a href="https://github.com/yoshamini123" target="_blank" class="contact">
+                        <span>◆</span> GitHub
+                    </a>
+                    <a href="https://yoshamini123.github.io/piton/" target="_blank" class="contact">
+                        <span>◆</span> Python-курс
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ГЛАВНЫЙ ПРОЕКТ -->
+        <section class="featured">
+            <span class="label">🐍 Python · Обучающий курс</span>
+            <h2>Путешествие на планету <span class="snake">Пайтон</span></h2>
+            <p>Интерактивный блокнот по основам Python — от первых строк кода до анализа данных и f-строк. Пять модулей с примерами, заданиями и решениями.</p>
+            <div class="features">
+                <span class="feature">5 модулей</span>
+                <span class="feature">Задания</span>
+                <span class="feature">Решения</span>
+                <span class="feature">Для начинающих</span>
+            </div>
+            <a href="https://yoshamini123.github.io/piton/" target="_blank" class="btn">
+                Открыть проект <span class="arrow">→</span>
+            </a>
+        </section>
+
+        <!-- СЕТКА ПРОЕКТОВ -->
+        <div class="section-title">✦ Все работы ✦</div>
+
+        <div class="grid">
+
+            <!-- Figma -->
+            <article class="card figma">
+                <div class="icon-badge">🎨</div>
+                <h3>Figma</h3>
+                <p>Проектирование интерфейсов, макеты и интерактивные прототипы. Дипломная работа по UI/UX-дизайну.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Figma</span>
+                    <span class="card-tag">UI/UX</span>
+                    <span class="card-tag">Прототип</span>
+                </div>
+                <div class="links-stack">
+                    <a href="https://www.figma.com/proto/pnpz3r1RV1hjSc4HHlVOQ5/Untitled?node-id=1-2&t=gNnTKkWwblc8V2Y9-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" target="_blank">
+                        Дипломная работа <span class="arrow">→</span>
+                    </a>
+                    <a href="https://www.figma.com/" target="_blank">
+                        Официальный сайт <span class="arrow">→</span>
+                    </a>
                 </div>
             </article>
 
-            <!-- Проект 3: HTML проекты -->
-            <article class="project-card">
-                <h2 class="project-title">HTML & Веб-разработка</h2>
-                <p class="project-description">
-                    Коллекция проектов и экспериментов с HTML, CSS и JavaScript.
-                    Здесь представлены различные техники веб-разработки от основ до продвинутых эффектов.
-                </p>
-                
-                <ul class="links-list">
-                    <li>
-                        <a href='https://docs.google.com/spreadsheets/d/1h3AM2ID9Bm03L2R4vp5_F_RvbS7fsHEpPaZekYfZR14/edit?usp=sharing' 
-                           target="_blank" class="project-link">
-                            <span class="icon">📊</span> Прайс-лист (Google Sheets)
-                        </a>
-                    </li>
-                    <li>
-                        <a href='https://yoshamini123.github.io/htmlgraf/' target="_blank" class="project-link">
-                            <span class="icon">🎭</span> 3D графики в HTML
-                        </a>
-                    </li>
-                    <li>
-                        <a href='https://yoshamini123.github.io/tabliza/' target="_blank" class="project-link">
-                            <span class="icon">📋</span> Интерактивная таблица
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="tech-tags">
+            <!-- Антивирус -->
+            <article class="card antivirus">
+                <div class="icon-badge">🛡️</div>
+                <h3>Антивирус</h3>
+                <p>Веб-приложение для проверки файлов на наличие вредоносного ПО прямо в браузере.</p>
+                <div class="card-tags">
+                    <span class="card-tag">HTML</span>
+                    <span class="card-tag">CSS</span>
+                    <span class="card-tag">JavaScript</span>
+                </div>
+                <a href="https://yoshamini123.github.io/drweb/" target="_blank" class="card-link">
+                    Запустить <span class="arrow">→</span>
+                </a>
+            </article>
+
+            <!-- HTML -->
+            <article class="card html">
+                <div class="icon-badge">🌐</div>
+                <h3>HTML & Веб</h3>
+                <p>Эксперименты с HTML, CSS и JavaScript — от вёрстки до интерактивных таблиц и 3D-графики.</p>
+                <div class="card-tags">
+                    <span class="card-tag">HTML5</span>
+                    <span class="card-tag">CSS3</span>
+                    <span class="card-tag">JS</span>
+                </div>
+                <div class="links-stack">
+                    <a href="https://yoshamini123.github.io/htmlgraf/" target="_blank">
+                        3D-графика <span class="arrow">→</span>
+                    </a>
+                    <a href="https://yoshamini123.github.io/tabliza/" target="_blank">
+                        Интерактивная таблица <span class="arrow">→</span>
+                    </a>
+                    <a href="https://docs.google.com/spreadsheets/d/1h3AM2ID9Bm03L2R4vp5_F_RvbS7fsHEpPaZekYfZR14/edit?usp=sharing" target="_blank">
+                        Прайс-лист <span class="arrow">→</span>
+                    </a>
                 </div>
             </article>
-        </main>
-        <article class="project-card">
-        <h2 class="project-title">StackBlitz</h2>
-        <p class="project-description">
-            <strong>StackBlitz</strong> — это онлайн-среда разработки (IDE) для веб-проектов.
-        </p>
-      <p> работы представлены выше в блоке: HTML & Веб-разработка
-        <p>
-    </article>
+
+            <!-- StackBlitz -->
+            <article class="card stackblitz">
+                <div class="icon-badge">⚡</div>
+                <h3>StackBlitz</h3>
+                <p>Облачная среда разработки для веб-проектов — сборка и тестирование прямо в браузере.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Cloud IDE</span>
+                    <span class="card-tag">Web Dev</span>
+                </div>
+                <a href="https://stackblitz.com/" target="_blank" class="card-link">
+                    Открыть <span class="arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 3D-модели -->
+            <article class="card model3d">
+                <div class="icon-badge">🧊</div>
+                <h3>3D-модели</h3>
+                <p>Раздел для будущих 3D-работ — модели, созданные в Blender и других редакторах. Появятся позже, когда наберусь опыта.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Blender</span>
+                    <span class="card-tag">3D</span>
+                    <span class="card-tag">Моделирование</span>
+                </div>
+                <div class="placeholder">
+                    <span class="dot"></span>
+                    Скоро появится
+                </div>
+            </article>
+
+        </div>
+
+        <!-- ПОДВАЛ -->
         <footer>
-            <p>© 2026 учебное портфолио. Все проекты являются учебными.</p>
-            <p style="margin-top: 10px;">Сайт будет пополняться новыми работами ✨</p>
+            <div class="signature">— Собрание работ, 2026 —</div>
+            <div class="small">✦ Все проекты учебные · Сайт пополняется ✦</div>
         </footer>
+
     </div>
 
     <script>
-        // Плавная анимация при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.project-card');
-            
-            // Добавляем небольшую задержку для каждой карточки
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-            
-            // Эффект появления для header
-            const header = document.querySelector('header');
-            header.style.opacity = '0';
-            header.style.transform = 'translateY(-20px)';
-            
-            setTimeout(() => {
-                header.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                header.style.opacity = '1';
-                header.style.transform = 'translateY(0)';
-            }, 100);
-            
-            // Добавляем эффект при наведении на ссылки
-            const links = document.querySelectorAll('.project-link');
-            links.forEach(link => {
-                link.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateX(8px)';
-                });
-                
-                link.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
-                });
-            });
-            
-            // Консольное приветствие
-            console.log('%c✨ Добро пожаловать в моё портфолио! ✨', 'color: #64b5f6; font-size: 16px; font-weight: bold;');
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('%c✦ Портфолио загружено', 'color: #a05a6b; font-size: 14px; font-weight: bold;');
         });
     </script>
 </body>
