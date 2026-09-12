@@ -125,16 +125,16 @@
             to { transform: rotate(360deg); }
         }
 
-        /* ============ ОБО МНЕ ============ */
+        /* ============ ОБО МНЕ — теперь главный блок ============ */
         .about {
             background: var(--card);
             border-radius: 24px;
-            padding: 44px 44px;
+            padding: 48px 44px;
             margin-bottom: 24px;
             border: 1px solid var(--line);
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 36px;
+            grid-template-columns: 160px 1fr;
+            gap: 40px;
             align-items: center;
             position: relative;
         }
@@ -150,17 +150,16 @@
             border-radius: 24px 24px 0 0;
         }
 
-        /* Аватарка — с символом цветка ❀ */
         .avatar {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             background: var(--bordo-pale);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Playfair Display', serif;
-            font-size: 72px;
+            font-size: 82px;
             color: var(--bordo-soft);
             line-height: 1;
             border: 2px solid var(--bordo);
@@ -176,10 +175,10 @@
         .avatar::after {
             content: "✦";
             position: absolute;
-            bottom: 4px;
-            right: 4px;
-            width: 28px;
-            height: 28px;
+            bottom: 6px;
+            right: 6px;
+            width: 30px;
+            height: 30px;
             background: var(--bordo);
             color: var(--ink);
             border-radius: 50%;
@@ -192,11 +191,11 @@
 
         .about-content h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
             line-height: 1.15;
             letter-spacing: -0.02em;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: var(--ink);
         }
 
@@ -207,20 +206,20 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--bordo-soft);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .about-content p {
             font-size: 16px;
             color: var(--ink-soft);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .about-content .interests {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .about-content .interest {
@@ -262,113 +261,6 @@
             border-color: var(--bordo);
         }
 
-        /* ============ ГЛАВНЫЙ ПРОЕКТ ============ */
-        .featured {
-            background: var(--card);
-            border-radius: 24px;
-            padding: 48px 44px;
-            margin-bottom: 24px;
-            border: 1px solid var(--line);
-            position: relative;
-        }
-
-        .featured::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--bordo);
-            border-radius: 24px 24px 0 0;
-        }
-
-        .featured .label {
-            display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--bordo-soft);
-            background: var(--bordo-pale);
-            padding: 6px 14px;
-            border-radius: 30px;
-            margin-bottom: 22px;
-            border: 1px solid var(--bordo);
-        }
-
-        .featured h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 18px;
-            color: var(--ink);
-        }
-
-        .featured h2 .snake {
-            color: var(--bordo-soft);
-            font-style: italic;
-        }
-
-        .featured p {
-            font-size: 17px;
-            color: var(--ink-soft);
-            margin-bottom: 30px;
-            max-width: 560px;
-        }
-
-        .featured .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 30px;
-        }
-
-        .featured .feature {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            font-weight: 500;
-            padding: 5px 12px;
-            background: var(--card-2);
-            color: var(--ink-soft);
-            border-radius: 6px;
-            border: 1px solid var(--line);
-        }
-
-        /* ============ КНОПКА ============ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            padding: 16px 30px;
-            border-radius: 100px;
-            text-decoration: none;
-            background: var(--bordo);
-            color: var(--ink);
-            transition: background 0.2s ease;
-            letter-spacing: 0.01em;
-            border: 1px solid var(--bordo);
-        }
-
-        .btn:hover {
-            background: var(--bordo-soft);
-            border-color: var(--bordo-soft);
-        }
-
-        .btn .arrow {
-            transition: transform 0.25s;
-        }
-
-        .btn:hover .arrow {
-            transform: translateX(5px);
-        }
-
         /* ============ СЕКЦИЯ ============ */
         .section-title {
             font-family: 'JetBrains Mono', monospace;
@@ -379,6 +271,7 @@
             color: var(--muted);
             text-align: center;
             margin-bottom: 30px;
+            margin-top: 48px;
         }
 
         /* ============ СЕТКА ПРОЕКТОВ ============ */
@@ -421,6 +314,7 @@
         .card.html { --accent: var(--lav); }
         .card.stackblitz { --accent: var(--rose); }
         .card.model3d { --accent: var(--bordo-soft); }
+        .card.python { --accent: var(--silver-soft); }
 
         .card .icon-badge {
             width: 52px;
@@ -440,6 +334,7 @@
         .card.html .icon-badge { background: var(--lav-pale); border-color: var(--lav); }
         .card.stackblitz .icon-badge { background: var(--rose-pale); border-color: var(--rose); }
         .card.model3d .icon-badge { background: var(--bordo-pale); border-color: var(--bordo-soft); }
+        .card.python .icon-badge { background: var(--silver-pale); border-color: var(--silver-soft); }
 
         .card h3 {
             font-family: 'Playfair Display', serif;
@@ -601,7 +496,6 @@
         .header,
         .divider,
         .about,
-        .featured,
         .grid .card {
             animation: fadeUp 0.6s ease forwards;
             opacity: 0;
@@ -609,12 +503,12 @@
 
         .divider { animation-delay: 0.1s; }
         .about { animation-delay: 0.15s; }
-        .featured { animation-delay: 0.25s; }
-        .grid .card:nth-child(1) { animation-delay: 0.35s; }
-        .grid .card:nth-child(2) { animation-delay: 0.45s; }
-        .grid .card:nth-child(3) { animation-delay: 0.55s; }
-        .grid .card:nth-child(4) { animation-delay: 0.65s; }
-        .grid .card:nth-child(5) { animation-delay: 0.75s; }
+        .grid .card:nth-child(1) { animation-delay: 0.25s; }
+        .grid .card:nth-child(2) { animation-delay: 0.35s; }
+        .grid .card:nth-child(3) { animation-delay: 0.45s; }
+        .grid .card:nth-child(4) { animation-delay: 0.55s; }
+        .grid .card:nth-child(5) { animation-delay: 0.65s; }
+        .grid .card:nth-child(6) { animation-delay: 0.75s; }
 
         /* ============ МОБИЛЬНАЯ ============ */
         @media (max-width: 700px) {
@@ -631,17 +525,13 @@
             }
             .avatar {
                 margin: 0 auto;
-                width: 120px;
-                height: 120px;
-                font-size: 60px;
+                width: 130px;
+                height: 130px;
+                font-size: 66px;
             }
-            .about-content h2 { font-size: 26px; }
+            .about-content h2 { font-size: 28px; }
             .about-content .interests { justify-content: center; }
             .about-content .contacts { justify-content: center; }
-            .featured { padding: 32px 24px; border-radius: 20px; }
-            .featured h2 { font-size: 28px; }
-            .featured p { font-size: 15.5px; }
-            .btn { padding: 14px 24px; font-size: 14px; }
             .grid { grid-template-columns: 1fr; gap: 16px; }
             .card { padding: 26px 22px; }
             .card h3 { font-size: 20px; }
@@ -664,7 +554,7 @@
             <span class="star">✦</span>
         </div>
 
-        <!-- ОБО МНЕ -->
+        <!-- ОБО МНЕ — на первом месте -->
         <section class="about">
             <div class="avatar">
                 <span class="flower">❀</span>
@@ -672,7 +562,7 @@
             <div class="about-content">
                 <h2>Привет, я — автор</h2>
                 <div class="role">✦ Школьница · Учусь веб-разработке ✦</div>
-                <p>Я учусь в школе и параллельно осваиваю веб-разработку, дизайн интерфейсов и 3D-моделирование. Здесь я собираю свои учебные и дипломные проекты — от первых HTML-страниц до интерактивных приложений на Python.</p>
+                <p>Я учусь в школе и параллельно осваиваю веб-разработку, дизайн интерфейсов и 3D-моделирование. Здесь я собираю свои учебные и дипломные проекты — от первых HTML-страниц до интерактивных приложений.</p>
                 <div class="interests">
                     <span class="interest">◆ Веб-разработка</span>
                     <span class="interest">◆ Дизайн</span>
@@ -683,27 +573,8 @@
                     <a href="https://github.com/yoshamini123" target="_blank" class="contact">
                         <span>◆</span> GitHub
                     </a>
-                    <a href="https://yoshamini123.github.io/piton/" target="_blank" class="contact">
-                        <span>◆</span> Python-курс
-                    </a>
                 </div>
             </div>
-        </section>
-
-        <!-- ГЛАВНЫЙ ПРОЕКТ -->
-        <section class="featured">
-            <span class="label">🐍 Python · Обучающий курс</span>
-            <h2>Путешествие на планету <span class="snake">Пайтон</span></h2>
-            <p>Интерактивный блокнот по основам Python — от первых строк кода до анализа данных и f-строк. Пять модулей с примерами, заданиями и решениями.</p>
-            <div class="features">
-                <span class="feature">5 модулей</span>
-                <span class="feature">Задания</span>
-                <span class="feature">Решения</span>
-                <span class="feature">Для начинающих</span>
-            </div>
-            <a href="https://yoshamini123.github.io/piton/" target="_blank" class="btn">
-                Открыть проект <span class="arrow">→</span>
-            </a>
         </section>
 
         <!-- СЕТКА ПРОЕКТОВ -->
@@ -797,6 +668,21 @@
                     <span class="dot"></span>
                     Скоро появится
                 </div>
+            </article>
+
+            <!-- Python (перенесён сюда) -->
+            <article class="card python">
+                <div class="icon-badge">🐍</div>
+                <h3>Python-курс</h3>
+                <p>Интерактивный блокнот по основам Python — от первых строк кода до анализа данных. Пять модулей с примерами и решениями.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Python</span>
+                    <span class="card-tag">Обучение</span>
+                    <span class="card-tag">Notebook</span>
+                </div>
+                <a href="https://yoshamini123.github.io/piton/" target="_blank" class="card-link">
+                    Открыть <span class="arrow">→</span>
+                </a>
             </article>
 
         </div>
